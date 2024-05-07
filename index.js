@@ -1,10 +1,6 @@
-import http from 'http';
-
-const port = 3000;
-
-http.createServer((request, response) => {
-    console.log(`Webserver is running now on http://localhost:${port}`);
-	response.writeHead(200, { 'Content-Type': 'text/plain' });
-	response.write('Hello World');
-	response.end();
-}).listen(port)
+import express from 'express'
+const app = express()
+const port = 3000
+app.listen(port, () => {
+    console.log(`Server runs on http://localhost:${port}`);
+})
