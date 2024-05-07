@@ -11,10 +11,13 @@
     "type": "git",
     "url": "git+https://github.com/Webudvikler-TechCollege/SingOnline-API-CodeAlong.git"
   },
-  "author": "Heinz K",
+  "author": "Omid",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Webudvikler-TechCollege/SingOnline-API-CodeAlong/issues"
+    "url": "https://github.com/OmidDeiminiyat/SingOnline-API-CodeAlong-node"
   },
-  "homepage": "https://github.com/Webudvikler-TechCollege/SingOnline-API-CodeAlong#readme"
+  "homepage": "https://github.com/OmidDeiminiyat/SingOnline-API-CodeAlong-node",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
