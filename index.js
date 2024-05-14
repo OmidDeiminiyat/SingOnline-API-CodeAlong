@@ -1,6 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import { supabase } from './Config/supabase.config.js';
+import SongModel from './Modals/songs.model.js';
 
 dotenv.config();
 const port = process.env.PORT
@@ -17,7 +18,8 @@ app.post('/', (req, res) => {
     
     })
 
-    app.get('/test', async (req, res) => {
+    
+    app.get('/mySong', async (req, res) => {
         const { data, error } = await supabase.from('songs').select('title, id')
         if (error) { 
            console.error(error)
@@ -44,7 +46,25 @@ app.post('/', (req, res) => {
         }
     })
 
-    
+    app.get('/insert', async (reg, res) => {
+        const {data, error} = await supabase.from('artists').insert([
+            { name: 'Omid', description: 'test' }, 
+        ]);
+
+        if(error) {
+            console.error(error)
+        } else {
+            console.log(data)
+        }
+    })
+
+
+    app.get('/test', async (reg, res) => {
+        const data = await SongModel.getAllRecords()
+        res.send(data);
+    })
+
+
 
 app.listen(port, () => {
     console.log(`Server runs on http://localhost:${port}`);
