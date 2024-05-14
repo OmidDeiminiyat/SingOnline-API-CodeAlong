@@ -1,13 +1,17 @@
 import express from 'express'
 import dotenv from 'dotenv'
-import { supabase } from './Config/supabase.config.js';
-import SongModel from './Modals/songs.model.js';
-
-dotenv.config();
-const port = process.env.PORT
-
+// import { supabase } from './Config/supabase.config.js';
+// import SongModel from './Modals/songs.model.js';
+import {SongController} from './Controllers/song.controller.js'
 const app = express()
 
+const port = process.env.PORT
+dotenv.config()
+
+app.use(SongController)
+
+
+/*
 app.get('/', (req, res) => {
 res.send('Hello World')
 console.log(reg.query);
@@ -63,8 +67,7 @@ app.post('/', (req, res) => {
         const data = await SongModel.getAllRecords()
         res.send(data);
     })
-
-
+    */
 
 app.listen(port, () => {
     console.log(`Server runs on http://localhost:${port}`);
