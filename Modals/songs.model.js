@@ -46,7 +46,7 @@ export default class SongModel {
            
             const { data, error } = await supabase
                   .from('albums')
-                  .select('id, title, artist:artist_id (id, name), release_date')
+                  .select('id, artist:artist_id (id, name)')
             if(error) {
                 throw new Error(error)
             } else {
@@ -61,24 +61,8 @@ export default class SongModel {
 
 
 
-        // sang og album relater til artist
-        try {
-           
-            const { data, error } = await supabase
-                  .from('albums')
-                  .select('id, title, artist:artist_id (id, name), release_date')
-            if(error) {
-                throw new Error(error)
-            } else {
-                return data
-            }
-        
-        }
-        catch(error) {
-            console.error(`Fejl: kan ikke hente sangliste, ${error}`)
-        }
+      
 
-        
        
    }
    static async getRecordById() {
