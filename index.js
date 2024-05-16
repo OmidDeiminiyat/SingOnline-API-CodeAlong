@@ -3,12 +3,16 @@ import dotenv from 'dotenv'
 // import { supabase } from './Config/supabase.config.js';
 // import SongModel from './Modals/songs.model.js';
 import {SongController} from './Controllers/song.controller.js'
+import {artistController} from './Controllers/Artist.controller.js'
+import {albumController} from './Controllers/Album.controller.js'
+dotenv.config()
 const app = express()
 
 const port = process.env.PORT
-dotenv.config()
 
 app.use(SongController)
+app.use(artistController)
+app.use(albumController)
 
 
 /*
