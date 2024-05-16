@@ -16,7 +16,7 @@ export default class SongModel {
 			console.error(`Fejl i kald af sangliste: ${error}`)
 		}
 	}
-    
+
     static async getRecordById(id) {
 		try {
 			const { data, error } = await supabase
@@ -33,8 +33,35 @@ export default class SongModel {
 			console.error(`Fejl i kald af sang: ${error}`)
 		}
 	}	
+
+          
+        static async createRecord(formdata) {
+            try {
+                const { data, error } = await supabase
+                .from('songs')
+                .insert([
+                    {
+                        title: formdata.title,
+                        content: formdata.content,
+                        lyrics: formdata.lyrics,
+                        artist_id: formdata.artist_id
+                    }
+                ])
+                if(error) {
+                    throw new Error(error)
+                } else {
+                    return data
+                }
+    
+             } catch (error) {
+                console.error(`Fejl i oprettelse af sang: ${error}`)
+            }
+        }
+
 }
 
+
+   
  /*
  export default class SongModel {
     static async getAllRecords() {

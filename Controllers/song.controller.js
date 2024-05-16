@@ -15,6 +15,14 @@ SongController.get('/songs/:id', async (req, res) => {
 
 
 
+SongController.post('/songs', async (req, res) => {
+	const data = await SongModel.createRecord(req.body)
+	res.send(data)
+    console.log(req.body); 
+});
+
+
+
 /*
 import express from 'express'; 
 import SongModel from '../Modals/songs.model.js';
