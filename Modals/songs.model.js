@@ -1,9 +1,70 @@
 import { supabase } from '../Config/supabase.config.js';
 
- // Songs Modellen
 export default class SongModel {
+	static async getAllRecords() {
+		try {
+			const { data, error } = await supabase
+				.from('songs')
+				.select('id, title, created_at, artists(id, name)')
+
+			if(error) {
+				throw new Error(error)
+			} else {
+				return data
+			}
+		} catch (error) {
+			console.error(`Fejl i kald af sangliste: ${error}`)
+		}
+	}
+    
+    static async getRecordById(id) {
+		try {
+			const { data, error } = await supabase
+				.from('songs')
+				.select('*, artists(id, name)')
+				.eq('id', id)
+
+			if(error) {
+				throw new Error(error)
+			} else {
+				return data
+			}
+		} catch (error) {
+			console.error(`Fejl i kald af sang: ${error}`)
+		}
+	}	
+}
+
+ /*
+ export default class SongModel {
     static async getAllRecords() {
      
+        try {
+           
+            const { data, error } = await supabase
+                  .from('songs')
+                  .select('id')
+            if(error) {
+                throw new Error(error)
+            } else {
+                return data
+            }
+        }
+        catch(error) {
+            console.error(`Fejl: kan ikke hente sangliste, ${error}`)
+        }
+       
+   }
+   static async getRecordById() {
+            
+   }
+ }
+
+
+ */
+
+
+
         /*
         try {
            
@@ -42,34 +103,7 @@ export default class SongModel {
     */
 
         // Album model
-        try {
-           
-            const { data, error } = await supabase
-                  .from('albums')
-                  .select('id, artist:artist_id (id, name)')
-            if(error) {
-                throw new Error(error)
-            } else {
-                return data
-            }
-        
-        }
-        catch(error) {
-            console.error(`Fejl: kan ikke hente sangliste, ${error}`)
-        }
-
-
-
-
-      
-
-       
-   }
-   static async getRecordById() {
-            
-   }
- }
-
+    
 
 
 
