@@ -23,13 +23,39 @@ export default class albumModal {
 
 
 
-      
-
        
    }
    static async getRecordById() {
             
    }
+
+
+
+
+   // Update albumm in Supabase
+static async updateRecord(AlbumData) { 
+	try {
+		let { data, error } = await supabase 
+		.from('albums') 
+		.update([ 
+			{ 
+				title: AlbumData.title, 
+				description: AlbumData.description,
+                created_at: AlbumData.created_at,
+                artist_id: AlbumData.artist_id
+			} 
+		]) 
+		.eq('id', AlbumData.id)
+		if(error) {
+			throw new Error(error.message)
+		}
+
+	}
+	catch(error) {
+		console.error(error)
+	}
+}  
+
  }
 
 

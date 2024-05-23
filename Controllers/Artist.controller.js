@@ -15,6 +15,12 @@ artistController.get('/artists/:id', async (req, res) => {
 });
 
 
+artistController.put('/UpdateArtist', async (req, res) => { 
+	const data = await artistModel.updateRecord(req.body) 
+	res.send(data)
+
+	console.log(req.body); 
+ });
 
 /*
 import express from 'express'; 

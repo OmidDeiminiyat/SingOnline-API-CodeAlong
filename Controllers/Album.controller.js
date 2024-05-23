@@ -15,6 +15,13 @@ albumController.get('/albums/:id', async (req, res) => {
     console.log(req.params)
 });
 
+//Update Supabase
+albumController.put('/UpdateAlbum', async (req, res) => { 
+	const data = await albumModal.updateRecord(req.body) 
+	res.send(data)
+
+	console.log(req.body); 
+ });
 /*
 import express from 'express'; 
 import albumModal from '../Modals/album.modal.js';
