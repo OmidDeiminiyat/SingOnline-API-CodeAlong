@@ -15,6 +15,15 @@ albumController.get('/albums/:id', async (req, res) => {
     console.log(req.params)
 });
 
+//
+// insert into album table
+
+albumController.post('/albumTable', async (req, res) => {
+	const data = await albumModal.createRecord(req.body)
+	res.send(data)
+    console.log(req.body); 
+});
+
 //Update Supabase
 albumController.put('/UpdateAlbum', async (req, res) => { 
 	const data = await albumModal.updateRecord(req.body) 

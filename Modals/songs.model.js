@@ -34,17 +34,17 @@ export default class SongModel {
 		}
 	}	
 
-          
-        static async createRecord(formdata) {
+    // insert into songs table in supabase
+        static async createRecord(insert) {
             try {
                 const { data, error } = await supabase
                 .from('songs')
                 .insert([
                     {
-                        title: formdata.title,
-                        content: formdata.content,
-                        lyrics: formdata.lyrics,
-                        artist_id: formdata.artist_id
+                        title: insert.title,
+                        content: insert.content,
+                        lyrics: insert.lyrics,
+                        artist_id: insert.artist_id
                     }
                 ])
                 if(error) {
@@ -57,6 +57,7 @@ export default class SongModel {
                 console.error(`Fejl i oprettelse af sang: ${error}`)
             }
         }
+
 
 
 // update song in Supabase

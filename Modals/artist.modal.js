@@ -35,6 +35,29 @@ export default class artistModel {
 	}	
 
 
+	// insert into artist table in supabase
+	static async createRecord(newArtist) {
+		try {
+			const { data, error } = await supabase
+			.from('artists')
+			.insert([
+				{
+					name: newArtist.name,
+					created_at: newArtist.created_at,
+					description: newArtist.description,
+					image: newArtist.image
+				}
+			])
+			if(error) {
+				throw new Error(error.message)
+			}
+	
+		}
+		catch(error) {
+			console.error(error)
+		}
+	}
+
 
 
 

@@ -14,7 +14,14 @@ artistController.get('/artists/:id', async (req, res) => {
     console.log(req.params)
 });
 
+// insert into artist table in database
+artistController.post('/insertArtist', async (req, res) => {
+	const data = await artistModel.createRecord(req.body)
+	res.send(data)
+    console.log(req.body); 
+});
 
+// Update artists table using id
 artistController.put('/UpdateArtist', async (req, res) => { 
 	const data = await artistModel.updateRecord(req.body) 
 	res.send(data)

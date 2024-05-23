@@ -29,6 +29,29 @@ export default class albumModal {
             
    }
 
+// insert into album table
+
+static async createRecord(newAlbum) {
+    try {
+        const { data, error } = await supabase
+        .from('albums')
+        .insert([
+            {
+                title: newAlbum.title,
+                description: newAlbum.description,
+                created_at: newAlbum.created_at,
+                artist_id: newAlbum.artist_id
+            }
+        ])
+        if(error) {
+            throw new Error(error.message)
+        }
+
+    }
+    catch(error) {
+        console.error(error)
+    }
+}
 
 
 
