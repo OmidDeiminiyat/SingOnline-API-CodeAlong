@@ -29,17 +29,12 @@ artistController.put('/UpdateArtist', async (req, res) => {
 	console.log(req.body); 
  });
 
-/*
-import express from 'express'; 
-import artistModel from '../Modals/artist.modal.js';
-export const artistController = express.Router();
+// Delete from artist table
+// i deleted an artist called Omid succesfully
+ artistController.delete('/deleteArtist', async (req, res) => { 
+	const data = await artistModel.deleteRecord(req.body) 
+	res.send(data)
 
+	console.log(req.body); 
+ });
 
-
-artistController.get('/Artist', async (req, res) => {
-
-let data = await artistModel.getArtistRecord();
-    res.send(data);
-})
-
-*/

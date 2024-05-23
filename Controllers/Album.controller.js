@@ -31,16 +31,12 @@ albumController.put('/UpdateAlbum', async (req, res) => {
 
 	console.log(req.body); 
  });
-/*
-import express from 'express'; 
-import albumModal from '../Modals/album.modal.js';
-export const albumController = express.Router();
 
 
+ // i deleted an albums succesfully
+ albumController.delete('/deleteAlbum', async (req, res) => { 
+	const data = await albumModal.deleteRecord(req.body) 
+	res.send(data)
 
-albumController.get('/Album', async (req, res) => {
-
-let data = await albumModal.getAlbumModal();
-    res.send(data);
-})
-*/
+	console.log(req.body); 
+ });

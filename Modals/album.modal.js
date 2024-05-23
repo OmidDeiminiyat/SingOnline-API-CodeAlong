@@ -79,6 +79,26 @@ static async updateRecord(AlbumData) {
 	}
 }  
 
+// Delete from album table
+// i deleted an album succesfully
+static async deleteRecord(deleteAlbum) { 
+	try {
+		let { data, error } = await supabase
+   .from('albums')
+   .delete()
+   .eq('id', deleteAlbum.id)
+
+		if(error) {
+			throw new Error(error.message)
+		}
+
+	}
+	catch(error) {
+		console.error(error)
+	}
+}
+
+
  }
 
 

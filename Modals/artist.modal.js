@@ -84,4 +84,24 @@ static async updateRecord(artistData) {
 	}
 }  
 
+// Delete from artist table
+// i deleted an artist called Omid succesfully
+static async deleteRecord(deleteArtist) { 
+	try {
+		let { data, error } = await supabase
+   .from('artists')
+   .delete()
+   .eq('id', deleteArtist.id)
+
+		if(error) {
+			throw new Error(error.message)
+		}
+
+	}
+	catch(error) {
+		console.error(error)
+	}
+} 
+
+
 }

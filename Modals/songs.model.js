@@ -85,85 +85,25 @@ export default class SongModel {
         }   
 
 
+        // Delete from song table
+// i deleted a song succesfully
+static async deleteRecord(deleteSong) { 
+	try {
+		let { data, error } = await supabase
+   .from('songs')
+   .delete()
+   .eq('id', deleteSong.id)
+
+		if(error) {
+			throw new Error(error.message)
+		}
+
+	}
+	catch(error) {
+		console.error(error)
+	}
 }
 
 
+}
 
-
-
-   
- /*
- export default class SongModel {
-    static async getAllRecords() {
-     
-        try {
-           
-            const { data, error } = await supabase
-                  .from('songs')
-                  .select('id')
-            if(error) {
-                throw new Error(error)
-            } else {
-                return data
-            }
-        }
-        catch(error) {
-            console.error(`Fejl: kan ikke hente sangliste, ${error}`)
-        }
-       
-   }
-   static async getRecordById() {
-            
-   }
- }
-
-
- */
-
-
-
-        /*
-        try {
-           
-            const { data, error } = await supabase
-                  .from('songs')
-                  .select('id, title, content, created_at, artist_id')
-            if(error) {
-                throw new Error(error)
-            } else {
-                return data
-            }
-        
-        }
-        catch(error) {
-            console.error(`Fejl: kan ikke hente sangliste, ${error}`)
-        }
-
-
-//Artists Model
-
-        try {
-           
-            const { data, error } = await supabase
-                  .from('artists')
-                  .select('id, name')
-            if(error) {
-                throw new Error(error)
-            } else {
-                return data
-            }
-        
-        }
-        catch(error) {
-            console.error(`Fejl: kan ikke hente sangliste, ${error}`)
-        }
-    */
-
-        // Album model
-    
-
-
-
-       
-    
-   

@@ -32,20 +32,10 @@ SongController.put('/songs', async (req, res) => {
  });
 
 
-/*
-import express from 'express'; 
-import SongModel from '../Modals/songs.model.js';
-export const SongController = express.Router();
+  // i deleted a song succesfully
+  SongController.delete('/deleteSong', async (req, res) => { 
+	const data = await SongModel.deleteRecord(req.body) 
+	res.send(data)
 
-
-
-SongController.get('/songs/:id', async (req, res) => {
-    const {id} = req.params
-console.log(req.params);
-
-let data = await SongModel.getAllRecords();
-    res.send(data);
-    
-})
-
-*/
+	console.log(req.body); 
+ });
