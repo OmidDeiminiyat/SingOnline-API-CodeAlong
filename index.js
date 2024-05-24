@@ -5,6 +5,7 @@ import dotenv from 'dotenv'
 import {SongController} from './Controllers/song.controller.js'
 import {artistController} from './Controllers/Artist.controller.js'
 import {albumController} from './Controllers/Album.controller.js'
+import {profileController} from './myController/profile.controller.js'
 dotenv.config()
 const app = express()
 
@@ -17,6 +18,7 @@ app.get('/', (req, res) => {
 app.use(SongController)
 app.use(artistController)
 app.use(albumController)
+app.use(profileController)
 
 
 
