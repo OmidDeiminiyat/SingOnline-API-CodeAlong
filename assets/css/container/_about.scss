@@ -1,0 +1,79 @@
+@media (min-width: 700px) {
+#about {
+    background-color: $body;
+
+    .boxAbout {
+        width: 50%;
+        background-color: $main-white;
+        text-align: center;
+        position: relative;
+        padding: 10px 0 10px 0;
+        top: -80px;
+        margin-left: 25%;
+    }
+    .allAbout {
+       @include display_grid(1fr 1fr);
+       width: 90%;
+       margin-left: 5%;
+       text-align: center;
+
+      .imgThree {
+        position: relative;
+
+        img:nth-child(1){
+            cursor: pointer;
+            position: relative;
+        
+            &:hover{
+               top: -45px;
+            }
+        }
+
+        img:nth-child(2){
+            cursor: pointer;
+            position: absolute;
+            left: 24%;
+            top: 18px;
+            &:hover{
+               top: -45px;
+            }
+        }
+        img:nth-child(3){
+            cursor: pointer;
+            position: absolute;
+            left: 33%;
+            top: 42px;
+            &:hover{
+               top: -45px;
+            }
+          
+        }
+    }
+
+    }
+    .aboutArticle {
+        header {
+            h3{
+                color: $main-white;
+               }
+        }
+       
+       p{
+        color: $Paragraf;
+       }
+       button {
+       @include Button(10px 0 25px 0);
+       }
+       
+    }
+}
+}
+
+@media (max-width: 600px) {
+    .allAbout {
+       @include display_grid(1fr);
+       
+       
+    }
+
+}

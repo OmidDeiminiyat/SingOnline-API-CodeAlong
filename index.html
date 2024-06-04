@@ -3,14 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
-    <script src="Modals/album.modal.js" defer></script>
+    <title>Singonline Frontend</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
+
 <body>
-    <form action="" method="post">
-        <input type="email" id="email">
-    <button onclick="recivedData('new', 'new album test', '11.02.2024', 'ec3272bf-a925-4a74-9e43-6275a629bc87')" >Click me</button>
-    </form>
+    <nav id="Navigation">
+        <img src="assets/images/Asset 2.png" alt="">
+        <ul class="allpage">
+            <li ><a class="picked" href="index.html#Home"> Home </a></li>
+            <li><a href="index.html#about">About </a></li>
+            <li><a href="index.html#Music">Music </a></li>
+            <li><a href="index.html#Shows">Shows </a></li>
+            <li><a href="index.html#Photos">Photos </a></li>
+            <li><a href="index.html#Contact">Contact </a></li>
+            <li><a href="index.html#Store">Store </a></li>
+        </ul>
+        <ul class="but">
+            <li> <a href="">Join now </a></li>
+        </ul>
+    </nav>
+    <!-- Nav for mobile -->
+    <nav id="navMobile">
+        <ul>
+            <li class="picked" ><a href="index.html#Home"> Home </a></li>
+            <li><a href="index.html#about">About </a></li>
+            <li><a href="index.html#Music">Music </a></li>
+            <li><a href="index.html#Shows">Shows </a></li>
+            <li><a href="index.html#Photos">Photos </a></li>
+            <li><a href="index.html#Contact">Contact </a></li>
+            <li><a href="index.html#Store">Store </a></li>
+        </ul>
+        <img src="assets/images/Asset 2.png" alt="">
+        
+    </nav>
+    <main>
+        <section class="first_section">
+            <span onclick="openNav()" id="hiddenIcone" class="material-symbols-outlined">
+                menu
+            </span>
+            <span onclick="closeNav()" id="apearIcone" class="material-symbols-outlined">
+                menu_open
+                </span>
+                
+                <video autoplay muted loop id="myVideo">
+                    <source src="assets/media/the-singer-is-performing-the-song-emotionally-2023-11-27-05-14-34-utc.mp4" type="video/mp4">
+                  </video>
+            <figure class="header">
+                <!-- <h1>Good Music</h1>
+                <h2>Good Mood</h2> -->
+                <main class="container">
+                    <p>Welcome 👋 </p>
+                    <section class="animation">
+                      <div class="first"><div>Good Music</div></div>
+                      <div class="second"><div>Good Mood</div></div>
+                      <div class="third"><div>SingOnline</div></div>
+                    </section>
+                  </main>
+            </figure>    
+        </section>
+        <section id="about">
+            <article class="boxAbout">
+                <hgroup>
+                    <h3>Music is the only language in which you cannot say a mean or sarcastic thing.!</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius modi obcaecati, reprehenderit totam optio magni exercitationem nihil impedit cupiditate et delectus doloremque aspernatur, voluptatum quam consequuntur omnis, eum necessitatibus iusto!</p>
+                </hgroup>
+            </article>
+            <div class="allAbout">
+                <figure class="imgThree">
+                    <img src="assets/images/young-handsome-man-in-eyeglasses-and-hat-playing-o-2023-11-27-05-32-58-utc.jpg" alt="">
+                    <img src="assets/images/young-handsome-man-in-eyeglasses-and-hat-playing-o-2023-11-27-05-32-58-utc.jpg" alt="">
+                    <img src="assets/images/young-handsome-man-in-eyeglasses-and-hat-playing-o-2023-11-27-05-32-58-utc.jpg" alt="">
+                </figure>
+                <article class="aboutArticle">
+                    <header>
+                        <h3>Music is the only language in which you cannot say a mean or sarcastic thing.</h3>
+                    </header>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius aspernatur voluptate tempora. Ea, harum! Eveniet, distinctio blanditiis veritatis, delectus praesentium rem fuga voluptatum adipisci placeat, labore assumenda nostrum earum cumque.</p>
+                    <button>Learn more</button>
+                </article>
+            </div>
+            
+        </section>
+        <div class="music-player">
+            <div class="player-controls">
+                <img src="album-art.jpg" alt="Album Artwork">
+                <div class="song-info">
+                </div>
+                <button id="play-pause">Play</button>
+                <input type="range" id="progress" min="0" max="100" value="0">
+            </div>
+        </div>
+        <audio id="audio-player" src="your-song.mp3" preload="metadata"></audio>
+    </main>
     
+   <script src="assets/js/player.js"></script>
+   <script src="assets/js/mainScript.js"></script>
 </body>
 </html>

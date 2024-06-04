@@ -1,0 +1,26 @@
+@mixin display_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@mixin display_grid($noOfColumn) {
+    display: grid;
+    grid-template-columns: $noOfColumn;
+    gap: 1rem;
+}
+
+@mixin hidden {
+    display: none;
+}
+
+@mixin Button($padding) {
+    text-align: center;
+    padding: $padding;
+    height: 30px;
+    width: 130px;
+    margin: 0;
+    background-color: $button;
+    border: none;
+    color: $main-white;
+}

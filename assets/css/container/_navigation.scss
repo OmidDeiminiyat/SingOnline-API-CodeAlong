@@ -1,0 +1,126 @@
+@import "../helper/mixin";
+@import "../helper/colors";
+
+body {
+    background-color: $body;
+}
+#hiddenIcone {
+    display: none;
+    color: $main-white;
+    position: absolute;
+    left: 90%;
+    cursor: pointer;
+}
+#apearIcone {
+    @extend #hiddenIcone;
+ }
+
+
+#Navigation {
+    @include display_row;
+    position: relative;
+    width: 94%;
+    margin-left: 5%;
+
+    img {
+        width: 6%;
+    }
+ 
+
+   .allpage {
+    @include display_row;
+    list-style: none;
+    
+    li {
+        margin: 0 20px 0 20px;
+        a {
+            text-decoration: none;
+            color: $main-white;
+            text-transform: uppercase;
+        }
+        a:hover{
+            color: $box-hover;
+        }
+    }
+    .picked{
+        color: $box-hover;
+    }
+   }
+   .but {
+   
+   @include Button(15px 0 0 0);
+   text-align: center;
+   padding: 15px 0 0 0;
+   height: 30px;
+   width: 130px;
+   margin: 0;
+   background-color: $button;
+
+    li {
+        
+        a {
+            text-decoration: none;
+            color: $main-white;
+            text-transform: uppercase;
+        }
+        a:hover{
+            color: $box-hover;
+        }
+    }
+   
+}
+
+}
+
+#navMobile {
+    display: none;
+    position: absolute;
+    background-color: $navBackground;
+    width: 50%;
+    height: 100%;
+    ul {
+        @include display_grid(1fr);
+        padding: 0;
+
+        list-style: none;
+        li {
+            margin: 6px 0 6px 0;
+            a {
+                text-decoration: none;
+                color: $main-white;
+                text-transform: uppercase;
+                margin: 0 0 0 20px;
+            }
+            a:hover{
+                color: $box-hover;
+                
+            }
+        }
+      
+        .picked{
+            color: $box-hover;
+            background-color: $navButBack;
+            padding: 6px 0 6px 0;
+        }
+    }
+    img {
+        width: 50%;
+        margin: 10% 0 0 25%;
+    }
+
+}
+
+
+
+@media (max-width: 600px) {
+    #Navigation {
+        display: none;
+    }
+#hiddenIcone {
+    display: block;
+}
+#apearIcone {
+   display: none;
+ }
+
+}
