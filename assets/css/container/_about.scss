@@ -1,6 +1,11 @@
 @media (min-width: 700px) {
+    
 #about {
     background-color: $body;
+
+    .gallery {
+        display: none;
+    }
 
     .boxAbout {
         width: 50%;
@@ -19,10 +24,12 @@
 
       .imgThree {
         position: relative;
+  
 
         img:nth-child(1){
             cursor: pointer;
             position: relative;
+            width: 70%;
         
             &:hover{
                top: -45px;
@@ -32,6 +39,7 @@
         img:nth-child(2){
             cursor: pointer;
             position: absolute;
+            width: 70%;
             left: 24%;
             top: 18px;
             &:hover{
@@ -41,6 +49,7 @@
         img:nth-child(3){
             cursor: pointer;
             position: absolute;
+            width: 70%;
             left: 33%;
             top: 42px;
             &:hover{
@@ -61,8 +70,12 @@
        p{
         color: $Paragraf;
        }
-       button {
+       .Butti {
        @include Button(10px 0 25px 0);
+       cursor: pointer;
+       &:hover {
+        color: $box-hover;
+       }
        }
        
     }
@@ -70,10 +83,88 @@
 }
 
 @media (max-width: 600px) {
+    #about {
+        position: relative;
+        background-color: $main-background;
+
+        text-align: center;
+    .boxAbout {
+        width: 100%;
+        background-color: $main-white;
+        text-align: center;
+        position: relative;
+        padding: 10px 0 10px 0;
+        
+
+    }
     .allAbout {
        @include display_grid(1fr);
        
-       
+       .imgThree {
+        display: none;
+       }
+
+       .first-test {
+        img{
+            width: 100%;
+        }
+        .gallery_content{
+            @include display_grid(1fr 1fr);
+           
+            img{
+                width: 100%;
+            }
+        }
+       }
+    }
+.gallery {
+    display: block;
+    h3 {
+        color: $main-white;
+        
+    }
+    .second-figure {
+        @include display_grid(1fr);
+       margin: 0px;
+    }
+    .second-figure span {
+        width: 100%;
+    }
+    .second-figure .first-test img {
+    width: 98%;
+    cursor: pointer;
+    }
+    .second-figure .second-test {
+        @include display_grid(1fr 1fr);
+    }
+     .second-figure .second-test img {
+        width: 96%;
+        margin-top: 9px;
+        cursor: pointer;
+    }
+
+}
+
+.aboutArticle {
+    header {
+        h3{
+            color: $main-white;
+           }
+    }
+   
+   p{
+    color: $Paragraf;
+   }
+   .Butti {
+    @include Button(10px 0 25px 0);
+    cursor: pointer;
+    &:hover {
+     color: $box-hover;
+    }
+    }
+   
+}
+
     }
 
 }

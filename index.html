@@ -6,7 +6,7 @@
     <title>Singonline Frontend</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
 </head>
 
 <body>
@@ -39,23 +39,33 @@
         <img src="assets/images/Asset 2.png" alt="">
         
     </nav>
-    <main>
+    <main id="Main">
         <section class="first_section">
             <span onclick="openNav()" id="hiddenIcone" class="material-symbols-outlined">
                 menu
             </span>
             <span onclick="closeNav()" id="apearIcone" class="material-symbols-outlined">
                 menu_open
-                </span>
+            </span>
                 
-                <video autoplay muted loop id="myVideo">
+                <video autoplay muted loop id="myVideo" >
                     <source src="assets/media/the-singer-is-performing-the-song-emotionally-2023-11-27-05-14-34-utc.mp4" type="video/mp4">
-                  </video>
+                </video>
+                 
             <figure class="header">
-                <!-- <h1>Good Music</h1>
-                <h2>Good Mood</h2> -->
                 <main class="container">
                     <p>Welcome 👋 </p>
+                    <section class="animation">
+                      <div class="first"><div>Good Music</div></div>
+                      <div class="second"><div>Good Mood</div></div>
+                      <div class="third"><div>SingOnline</div></div>
+                    </section>
+                  </main>
+            </figure>    
+
+            <figure class="MobileHeader">
+                <main class="container">
+                    <p>Welcome </p>
                     <section class="animation">
                       <div class="first"><div>Good Music</div></div>
                       <div class="second"><div>Good Mood</div></div>
@@ -73,20 +83,126 @@
             </article>
             <div class="allAbout">
                 <figure class="imgThree">
-                    <img src="assets/images/young-handsome-man-in-eyeglasses-and-hat-playing-o-2023-11-27-05-32-58-utc.jpg" alt="">
-                    <img src="assets/images/young-handsome-man-in-eyeglasses-and-hat-playing-o-2023-11-27-05-32-58-utc.jpg" alt="">
-                    <img src="assets/images/young-handsome-man-in-eyeglasses-and-hat-playing-o-2023-11-27-05-32-58-utc.jpg" alt="">
+                    <img src="assets/images/Staff/caucasian-female-singer-portrait-isolatedjpg.jpg" alt="">
+                    <img src="assets/images/Staff/contemporary-singer.JPG" alt="">
+                    <img src="assets/images/Staff/young-female-singer-performing-at-nightclu.jpg" alt="">
                 </figure>
+                <!-- Mobile version for images -->
+                <section class="gallery">
+           
+                    <h3>Get acquainted the band members</h3>
+                    <figure class="second-figure">
+                        <span class="first-test">
+                            <img src="assets/images/Staff/young-female-singer-performing-at-nightclu.jpg" id="imgLarge" alt="">
+                        </span>
+                        <span class="gallery_content second-test">
+                            <img class="newImage" src="assets/images/Staff/young-handsome-man-in-eyeglasses-and-hat-playing-o-2023-11-27-05-32-58-utc.jpg" alt="" onclick="changeImage('assets/images/Staff/young-handsome-man-in-eyeglasses-and-hat-playing-o-2023-11-27-05-32-58-utc.jpg')">
+                            <img class="newImage" src="assets/images/Staff/contemporary-singer.JPG" alt="" onclick="changeImage('assets/images/Staff/contemporary-singer.JPG')">
+                            <img class="newImage" src="assets/images/Staff/young-female-singer-performing-at-nightclu.jpg" alt="" onclick="changeImage('assets/images/Staff/young-female-singer-performing-at-nightclu.jpg')">
+                            <img class="newImage" src="assets/images/Staff/caucasian-female-singer-portrait-isolatedjpg.jpg" alt="" onclick="changeImage('assets/images/Staff/caucasian-female-singer-portrait-isolatedjpg.jpg')">
+                        </span>
+                    </figure>
+                </section>
+
                 <article class="aboutArticle">
                     <header>
                         <h3>Music is the only language in which you cannot say a mean or sarcastic thing.</h3>
                     </header>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius aspernatur voluptate tempora. Ea, harum! Eveniet, distinctio blanditiis veritatis, delectus praesentium rem fuga voluptatum adipisci placeat, labore assumenda nostrum earum cumque.</p>
-                    <button>Learn more</button>
+                    <button class="Butti">Learn more</button>
                 </article>
-            </div>
-            
+            </div>  
         </section>
+        <!-- Upcoming section start -->
+        <section id="Upcoming">
+            <h1>Upcoming Events</h1>
+            <span class="allSections" >
+                <div class="containerOne">
+                    <article>
+                        <header>
+                            <h3>Alexander the greate</h3>
+                            <h5>23.Apr.2066</h5>
+                        </header> <hr>
+                        <p><span class="material-symbols-outlined">schedule </span> 21:00 - 24:00 </p>
+                        <p><span class="material-symbols-outlined">location_on</span>Dead valley , Gyza, Egypt</p>
+
+                    </article>
+                    <article>
+                        <header>
+                            <h3>Omid the greate</h3>
+                            <h5>25.Apr.2066</h5>
+                        </header> <hr>
+                        <p><span class="material-symbols-outlined">schedule </span> 21:00 - 24:00 </p>
+                        <p><span class="material-symbols-outlined">location_on</span>Dead valley , Gyza, Egypt</p>
+
+                    </article>
+                </div>
+                <div class="containerTwo">
+                    <figure>
+                        <img src="assets/images/Staff/SingerOnline.png" alt="">
+                    </figure>
+                </div>
+                <div class="containerThree">
+                    <article>
+                        <header>
+                            <h3>Alexander the greate</h3>
+                            <h5>25.Apr.2066</h5>
+                        </header> <hr>
+                        <p><span class="material-symbols-outlined">schedule </span> 21:00 - 24:00 </p>
+                        <p><span class="material-symbols-outlined">location_on</span>Dead valley , Gyza, Egypt</p>
+
+                    </article>
+                    <article>
+                        <header>
+                            <h3>Alexander the greate</h3>
+                            <h5>25.Apr.2066</h5>
+                        </header> <hr>
+                        <p><span class="material-symbols-outlined">schedule </span> 21:00 - 24:00 </p>
+                        <p><span class="material-symbols-outlined">location_on</span>Dead valley , Gyza, Egypt</p>
+
+                    </article>
+                </div>
+            </span>
+        </section>
+
+        <footer class="mainFooter">
+            <div>
+                <figure>
+                    <img src="assets/images/Asset 2.png" alt="">
+                    <figcaption>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, ab. Dolor, iusto cupiditate numquam tempore veritatis repellendus, nobis consequatur quo possimus error necessitatibus aperiam magnam odit nemo aliquam? Omnis, dolorem.</p>
+                    </figcaption>
+                </figure>
+
+            </div>
+            <div>
+                <h3>List of singers</h3><hr>
+                <span id="Singers">
+                    <p>Jony dalthon</p>
+                    <p>Jony dalthon</p>
+                    <p>Jony dalthon</p>
+                    <p>Jony dalthon</p>
+                    <p>Jony dalthon</p>
+                </span>
+            </div>
+            <div>
+                <h3>Follow us and get the latest musics</h3><hr>
+                <span id="Error" ></span>
+                <form action="">
+                    <input type="email" id="email" placeholder="Insert your email" required>
+                    <input type="button" value="Submite">
+                </form>
+                <figure class="icons" >
+                <img src="assets/images/icons/facebook-2.png" alt="">
+                <img src="assets/images/icons/instagram.png" alt="">
+                <img src="assets/images/icons/youtube.png" alt="">
+                <img src="assets/images/icons/spotify.png" alt="">
+                </figure>
+            </div>
+        </footer>
+
+  
+
         <div class="music-player">
             <div class="player-controls">
                 <img src="album-art.jpg" alt="Album Artwork">

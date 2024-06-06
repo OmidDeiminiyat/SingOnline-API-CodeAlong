@@ -1,0 +1,56 @@
+@import "../helper/colors";
+@import "../helper/mixin";
+@import "../helper/placeholder";
+#Upcoming {
+    background-color: $navBackground;
+    h1{
+       @extend %main-titles;
+    }
+    .allSections {
+        @include display_grid(1fr 1fr 1fr);
+        @extend %main-width;
+        padding: 30px 0 0 0;
+        .containerOne {
+            text-align: center;
+            color: $Paragraf;
+            article {
+                background-color: $main-background;
+                padding: 6px 0 6px 0;
+                margin: 12px 0 12px 0;
+                &:hover {
+                    @extend %doHover;
+                }
+            }
+            hr{
+                @extend %main-breakLine;
+            }
+        }
+        .containerTwo {
+            img{
+                width: 134%;
+            }
+        }
+        .containerThree {
+            @extend .containerOne;
+            
+        }
+    }
+}
+
+
+@media (max-width:600px) {
+    #Upcoming {
+    .allSections {
+        @include display_grid(1fr);
+        .containerTwo {
+            margin: -200px 60px 0 0;
+        }
+        .containerThree {
+            @extend .containerOne;
+            margin-top: -50px;
+        }
+
+    }
+    }
+
+}

@@ -1,0 +1,43 @@
+@import "../helper/colors";
+@import "../helper/mixin";
+@import "../helper/placeholder";
+
+.mainFooter {
+    @include display_grid(1fr 1fr 1fr);
+    text-align: center;
+    color: $Paragraf;
+    background-color: $body;
+    hr {
+        @extend %main-breakLine;
+    }
+    div:nth-child(1){
+        img{
+            width: 40%;
+        }
+       
+    }
+    div:nth-child(3) {
+        .icons {
+            margin-top: 30px;
+            img {
+                margin: 0 6px 0 6px;
+                filter: invert(80%);
+            }
+        }
+       img{
+        width: 30px;
+       }
+    }
+
+}
+@media (max-width:600px) {
+    .mainFooter {
+        @include display_grid(1fr 1fr);
+        margin-bottom: 80px;
+
+        div:nth-child(1) {
+            display: none;
+        }
+
+    }
+}

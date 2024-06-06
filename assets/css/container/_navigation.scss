@@ -78,6 +78,7 @@ body {
     background-color: $navBackground;
     width: 50%;
     height: 100%;
+    z-index: 1;
     ul {
         @include display_grid(1fr);
         padding: 0;
@@ -115,6 +116,7 @@ body {
 @media (max-width: 600px) {
     #Navigation {
         display: none;
+    
     }
 #hiddenIcone {
     display: block;
@@ -122,5 +124,6 @@ body {
 #apearIcone {
    display: none;
  }
+
 
 }

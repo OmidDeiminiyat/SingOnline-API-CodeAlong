@@ -1,0 +1,22 @@
+%main-width{
+    width: 90%;
+    margin-left: 5%
+};
+
+%main-breakLine {
+    border: 1px dotted #ccc;  
+    width: 60%;
+}
+
+%main-titles {
+    color: $main-white;
+    text-align: center;
+    padding: 21px 0 0 0;
+    font-family: "Dancing Script", cursive;
+    font-size: 3vw;
+}
+
+%doHover {
+box-shadow: -3px 3px 23px 0px rgba(83, 82, 82, 0.658);
+    cursor: pointer;
+}

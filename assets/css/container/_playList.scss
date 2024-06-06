@@ -1,0 +1,11 @@
+@import "../helper/colors";
+@import "../helper/mixin";
+@import "../helper/placeholder";
+
+#MainSections {
+@include display_grid(1fr 1fr 1fr);
+
+section{
+    border: 1px solid white;
+}
+}
