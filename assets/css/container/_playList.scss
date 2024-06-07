@@ -3,9 +3,168 @@
 @import "../helper/placeholder";
 
 #MainSections {
-@include display_grid(1fr 1fr 1fr);
+@include display_row;
+.firstColumn {
+    width: 60%;
+    margin: 0 10px 0 10px;
+    .first-Div {
+       @extend %mainBox;
+        
+        span{
+            margin: 6px 12px 6px 12px;
+            padding: 0;
+        }
+    }
+    .second-Div {
+        @extend %mainBox;
+        margin-top: 30px;
+        @include display_grid(1fr);
+        cursor: pointer;
+       
+        .biblotec {
+            @include display_row;
+            @extend %nullMarPad;
+            width: 100%;
+           
+        }
+        .but{
+            button{
+                @include Button(0);
+                max-width: 80px;
+            }
+        }
+        .arrow{
+            @include display_row;
+            text-align: center;
+        }
+        .SingleMussic {
+            @include display_grid(1fr 1fr);
+            gap: 0;
+           
+            img{
+                width: 45px;
+            }
+            .listes {
+                margin-left: -50px;
 
-section{
-    border: 1px solid white;
+               h5{
+                font-size: 15px;
+                @extend %nullMarPad;
+               }
+               p{
+                font-size: 12px;
+               }
+            }
+        }
+    }
+    
+   
+    }
+
+    .secondColumn {
+        margin: 0 10px 0 10px;
+             width: 150%;
+            @extend %mainBox;
+
+        .topLine{
+         @include display_row;
+         margin: 0 10px 0 10px;
+        }
+        .rightTop {
+            float: left;
+            @include display_row;
+            form {
+                input{
+                    width: 200px;
+                    height: 30px;
+                    border-radius: 30px;
+                    border: 1px solid;
+                }
+            }
+        }
+
+        .middle-second{
+            @include display_grid(1fr 1fr 1fr 1fr);
+            figure{
+                @extend %nullMarPad;
+                background-color: $navBackground;
+                text-align: center;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .thirdColumn{
+        margin: 0 10px 0 10px;        
+        @include display_grid(1fr);
+        width: 50%;
+       color: $Paragraf;
+       .firstInThird{
+        @include display_row; 
+       }
+        div{
+            img{
+                width: 100%;
+            }
+        }
+    }
 }
+
+
+
+// player
+
+
+.player
+{
+   
+    position: absolute;
+    top: 10%;
+  width: 300px;
+  background: #fff;
+  padding: 20px 14px 8px 14px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 10px 2px 90px -11px rgba(13,100,76,0.75);
 }
+
+.imgBx img
+{
+  width: 100%;
+  height: auto;
+  border: none;
+  border-radius: 10px;
+}
+
+.player audio
+{
+  width: 100%;
+  border-radius: 6px;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+@media (max-width:600px){
+    #MainSections {
+        .firstColumn {
+            display: none;
+        }
+        
+        .thirdColumn {
+            display: none;
+        }
+        .secondColumn{
+            margin-top: 40px;
+            .middle-second{
+                @include display_grid(1fr 1fr);
+            }
+        }
+
+    }
+   
+   
+}
+
