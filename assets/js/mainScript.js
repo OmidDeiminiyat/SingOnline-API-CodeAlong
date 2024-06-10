@@ -1,26 +1,5 @@
-const navigation = document.getElementById('navMobile');
-const navBut = document.getElementById('hiddenIcone');
-const nayBeOpen = document.getElementById('apearIcone');
-const main = document.getElementById('Main');
-function openNav() {
-    navigation.style.display='block';
-    navBut.style.display='none';
-    nayBeOpen.style.display='block';
-    main.style.opacity ='0.2';
-}
-function closeNav() {
-    navigation.style.display='none';
-    navBut.style.display='block';
-    nayBeOpen.style.display='none';
-    main.style.opacity ='1';
-}
-
-function changeImage(newImage) {
-    document.getElementById('imgLarge').src = newImage;
-  }
 
 
-  
 
 
   import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
@@ -39,7 +18,7 @@ function changeImage(newImage) {
 
           if (error) throw error;
           displaySongs(songs)
-          console.log(songs);
+        //   console.log(songs);
       } catch (error) {
           console.error('Error fetching data from Supabase:', error);
       }
@@ -51,37 +30,32 @@ function changeImage(newImage) {
       
        
        songsList.innerHTML = ''
-       let rightCol = `<div class="SingleMussic">`
+       let rightCol = `<span class="SingleMussic" >`
        recivedData.forEach((Data, index) => {
         console.log('Recived data is:' + Data);
-        rightCol += `
+        rightCol += `<div class="everyRow" >
            <img class="GetOver" src="assets/images/playList/${Data.image}" alt="">
            <span class="listes">
            <h5>${Data.title}</h5>
-           <p>Don't look up...</p>
-           </span> 
+           <p onclick="playMusic('${Data.Track}')" >Listen to music</p>
+           </span> </div>
         `   
     });
-    rightCol += `</div>`
+    rightCol += `</span>`
     
     songsList.innerHTML = rightCol;
 }
 
-  // Fetch and display songs on page load
+
   fetchSongs();
 
 
   function handleClick() {
-    // Your code to run when the button is clicked
+
   const MyMusic = dosument.getElementById('musicPlayer');
     console.log("Button clicked!");
     MyMusic.style.display ='block';
 }
 const PlayIt = document.getElementById('PlayMusic');
 PlayIt.addEventListener("click", handleClick);
-
-
-
-
-  
 

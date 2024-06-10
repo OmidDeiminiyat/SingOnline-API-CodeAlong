@@ -1,0 +1,42 @@
+
+#profile {
+    display: none;
+    width: 80%;
+    margin-left: 10%;
+    padding: 90px 0 90px 0;
+    
+    @media (max-width:600px) {
+        width: 100%;
+        margin: 0;
+        padding: 90px 0 90px 0;
+    }
+
+    figure {
+        color: $Paragraf;
+        margin: 0;
+       @include display_grid(1fr 1fr);
+       img{
+        width: 60%;
+       }
+       figcaption {
+        text-align: center;
+       }
+       @media (max-width:600px) {
+        
+        @include display_grid(1fr);
+        img{
+            width: 100%;
+           }
+       }
+    }
+
+    #musicLists {
+        color: $Paragraf;
+        text-align: center;
+        ul {
+            li{
+                list-style: none;
+            }
+        }
+    }
+}

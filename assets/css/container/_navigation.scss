@@ -33,6 +33,7 @@ body {
     
     li {
         margin: 0 20px 0 20px;
+        cursor: pointer;
         a {
             text-decoration: none;
             color: $main-white;
@@ -57,7 +58,8 @@ body {
    background-color: $button;
 
     li {
-        
+        cursor: pointer;
+        list-style: none;
         a {
             text-decoration: none;
             color: $main-white;
@@ -85,6 +87,7 @@ body {
 
         list-style: none;
         li {
+            cursor: pointer;
             margin: 6px 0 6px 0;
             a {
                 text-decoration: none;

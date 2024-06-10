@@ -2,6 +2,9 @@
 @import "../helper/mixin";
 @import "../helper/placeholder";
 
+#secondPage {
+    display:  none;
+}
 #MainSections {
 @include display_row;
 .firstColumn {
@@ -37,10 +40,16 @@
             @include display_row;
             text-align: center;
         }
+        #firstSupaData { 
+            @include display_grid(1fr);
+     
         .SingleMussic {
-            @include display_grid(1fr 1fr);
+            @include display_grid(1fr);
             gap: 0;
-           
+            @media (max-width:600px) {
+                @include display_grid(1fr 1fr);
+                width: 100%;
+            }
             img{
                 width: 45px;
             }
@@ -56,6 +65,7 @@
                }
             }
         }
+    }
     }
     
    
@@ -116,10 +126,8 @@
 
 // player
 
-
-.player
-{
-   
+#musicPlayer{
+    display: none;
     position: absolute;
     top: 10%;
   width: 300px;
@@ -128,8 +136,8 @@
   border: none;
   border-radius: 10px;
   box-shadow: 10px 2px 90px -11px rgba(13,100,76,0.75);
+    
 }
-
 .imgBx img
 {
   width: 100%;
@@ -151,6 +159,7 @@
     #MainSections {
         .firstColumn {
             display: none;
+            width: 100%;
         }
         
         .thirdColumn {
@@ -164,7 +173,58 @@
         }
 
     }
+    // .SingleMussic {
+    //     @include display_grid(1fr 1fr);
+    //     gap: 0;
+       
+    //     img{
+    //         width: 45px;
+    //     }
+    //     .listes {
+    //         margin-left: -50px;
+
+    //        h5{
+    //         font-size: 15px;
+    //         @extend %nullMarPad;
+    //        }
+    //        p{
+    //         font-size: 12px;
+    //        }
+    //     }
+    // }
+
    
-   
+    #firstSupaData {
+        @include display_grid(1fr 1fr);
+
+    .SingleMussic {
+        @include display_grid(1fr 1fr);
+        width: 100%;
+        .everyRow {
+            margin: 6px 0 6px 0;
+            &:hover{
+                box-shadow: -3px 3px 23px 0px rgba(83, 82, 82, 0.658);
+            }
+        img{
+            min-width: 70px;
+            margin: 6px 0 6px 0;
+        }
+        .listes {
+            margin: 6px 0 0 0;
+
+           h5{
+            font-size: 15px;
+           }
+           p{
+            font-size: 12px;
+            &:hover{
+                color: $error;
+              }
+           }
+        }
+    }
+    }
+   }
+
 }
 

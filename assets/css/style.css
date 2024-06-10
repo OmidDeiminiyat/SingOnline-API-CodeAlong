@@ -30,6 +30,7 @@ body {
 }
 #Navigation .allpage li {
   margin: 0 20px 0 20px;
+  cursor: pointer;
 }
 #Navigation .allpage li a {
   text-decoration: none;
@@ -58,6 +59,10 @@ body {
   margin: 0;
   background-color: #1E2529;
 }
+#Navigation .but li {
+  cursor: pointer;
+  list-style: none;
+}
 #Navigation .but li a {
   text-decoration: none;
   color: white;
@@ -83,6 +88,7 @@ body {
   list-style: none;
 }
 #navMobile ul li {
+  cursor: pointer;
   margin: 6px 0 6px 0;
 }
 #navMobile ul li a {
@@ -516,7 +522,7 @@ body {
   color: rgba(253, 253, 253, 0.6274509804);
 }
 
-#MainSections .secondColumn .middle-second figure, #MainSections .firstColumn .second-Div .SingleMussic .listes h5, #MainSections .firstColumn .second-Div .biblotec {
+#MainSections .secondColumn .middle-second figure, #MainSections .firstColumn .second-Div #firstSupaData .SingleMussic .listes h5, #MainSections .firstColumn .second-Div .biblotec {
   margin: 0;
   padding: 0;
 }
@@ -583,7 +589,7 @@ body {
   color: rgba(253, 253, 253, 0.6274509804);
 }
 
-#MainSections .secondColumn .middle-second figure, #MainSections .firstColumn .second-Div .SingleMussic .listes h5, #MainSections .firstColumn .second-Div .biblotec {
+#MainSections .secondColumn .middle-second figure, #MainSections .firstColumn .second-Div #firstSupaData .SingleMussic .listes h5, #MainSections .firstColumn .second-Div .biblotec {
   margin: 0;
   padding: 0;
 }
@@ -649,9 +655,13 @@ body {
   color: rgba(253, 253, 253, 0.6274509804);
 }
 
-#MainSections .secondColumn .middle-second figure, #MainSections .firstColumn .second-Div .SingleMussic .listes h5, #MainSections .firstColumn .second-Div .biblotec {
+#MainSections .secondColumn .middle-second figure, #MainSections .firstColumn .second-Div #firstSupaData .SingleMussic .listes h5, #MainSections .firstColumn .second-Div .biblotec {
   margin: 0;
   padding: 0;
+}
+
+#secondPage {
+  display: none;
 }
 
 #MainSections {
@@ -697,22 +707,35 @@ body {
   justify-content: space-between;
   text-align: center;
 }
-#MainSections .firstColumn .second-Div .SingleMussic {
+#MainSections .firstColumn .second-Div #firstSupaData {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+#MainSections .firstColumn .second-Div #firstSupaData .SingleMussic {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1rem;
   gap: 0;
 }
-#MainSections .firstColumn .second-Div .SingleMussic img {
+@media (max-width: 600px) {
+  #MainSections .firstColumn .second-Div #firstSupaData .SingleMussic {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+  }
+}
+#MainSections .firstColumn .second-Div #firstSupaData .SingleMussic img {
   width: 45px;
 }
-#MainSections .firstColumn .second-Div .SingleMussic .listes {
+#MainSections .firstColumn .second-Div #firstSupaData .SingleMussic .listes {
   margin-left: -50px;
 }
-#MainSections .firstColumn .second-Div .SingleMussic .listes h5 {
+#MainSections .firstColumn .second-Div #firstSupaData .SingleMussic .listes h5 {
   font-size: 15px;
 }
-#MainSections .firstColumn .second-Div .SingleMussic .listes p {
+#MainSections .firstColumn .second-Div #firstSupaData .SingleMussic .listes p {
   font-size: 12px;
 }
 #MainSections .secondColumn {
@@ -766,7 +789,8 @@ body {
   width: 100%;
 }
 
-.player {
+#musicPlayer {
+  display: none;
   position: absolute;
   top: 10%;
   width: 300px;
@@ -795,6 +819,7 @@ body {
 @media (max-width: 600px) {
   #MainSections .firstColumn {
     display: none;
+    width: 100%;
   }
   #MainSections .thirdColumn {
     display: none;
@@ -807,4 +832,80 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
   }
+  #firstSupaData {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  #firstSupaData .SingleMussic {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+  }
+  #firstSupaData .SingleMussic .everyRow {
+    margin: 6px 0 6px 0;
+  }
+  #firstSupaData .SingleMussic .everyRow:hover {
+    box-shadow: -3px 3px 23px 0px rgba(83, 82, 82, 0.658);
+  }
+  #firstSupaData .SingleMussic .everyRow img {
+    min-width: 70px;
+    margin: 6px 0 6px 0;
+  }
+  #firstSupaData .SingleMussic .everyRow .listes {
+    margin: 6px 0 0 0;
+  }
+  #firstSupaData .SingleMussic .everyRow .listes h5 {
+    font-size: 15px;
+  }
+  #firstSupaData .SingleMussic .everyRow .listes p {
+    font-size: 12px;
+  }
+  #firstSupaData .SingleMussic .everyRow .listes p:hover {
+    color: red;
+  }
+}
+#profile {
+  display: none;
+  width: 80%;
+  margin-left: 10%;
+  padding: 90px 0 90px 0;
+}
+@media (max-width: 600px) {
+  #profile {
+    width: 100%;
+    margin: 0;
+    padding: 90px 0 90px 0;
+  }
+}
+#profile figure {
+  color: rgba(253, 253, 253, 0.6274509804);
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+#profile figure img {
+  width: 60%;
+}
+#profile figure figcaption {
+  text-align: center;
+}
+@media (max-width: 600px) {
+  #profile figure {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  #profile figure img {
+    width: 100%;
+  }
+}
+#profile #musicLists {
+  color: rgba(253, 253, 253, 0.6274509804);
+  text-align: center;
+}
+#profile #musicLists ul li {
+  list-style: none;
 }
